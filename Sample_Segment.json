@@ -1,0 +1,22 @@
+{
+    "name": "Cart Event XYZ",
+    "id": "7131f472ad372467",
+    "trace_id": "1-64f09265-9076cec802b0c6f87d076d81",
+    "start_time": 1693487717.748,
+    "end_time": 1693487731.738,
+    "in_progress": false,
+    "subsegments": [
+      {
+        "name": "Billing Microservice",
+        "id": "33cedd2e8a4b7127",
+        "trace_id": "1-64f09272-ee7e93edcc1f86b7cbe8bd91",
+        "start_time": 1693487717.748,
+        "end_time": 1693487730.731,
+        "in_progress": false,
+        "inferred": true,
+        "type": "subsegment",
+        "parent_id": "7131f472ad372467"
+      }
+    ]
+  }
+  

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xraydaemon
+  labels:
+    app: xraydaemon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xraydaemon
+  template:
+    metadata:
+      labels:
+        app: xraydaemon
+    spec:
+      serviceAccount: <IRSA Backed Service account>
+      containers:
+        - name: xraydaemon
+          image: <image url>
+          command:
+            [
+              "sh",
+              "-c",
+              "/usr/bin/xray -t 0.0.0.0:2000 -b 0.0.0.0:2000 -o -n <Region you want to connect to>",
+            ]
+          ports:
+            - containerPort: 2000
+              protocol: TCP
+            - containerPort: 2000
+              protocol: UDP

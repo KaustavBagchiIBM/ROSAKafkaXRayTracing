@@ -1,0 +1,18 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: xraydaemon
+  labels:
+    app: xraydaemon
+spec:
+  ports:
+    - name: 2000-tcp
+      port: 2000
+      protocol: TCP
+      targetPort: 2000
+    - name: 2000-udp
+      port: 2000
+      protocol: UDP
+      targetPort: 2000
+  selector:
+    app: xraydaemon
